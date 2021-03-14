@@ -11,6 +11,7 @@
 body {
   color: $main_color;
   @extend %bacground_color;
+  z-index: -10;
   &:after {
     content: " ";
     background: linear-gradient(222.26deg, #3B1D60 1.22%, #040D3E 106.28%);
@@ -26,6 +27,23 @@ body {
   }
 }
 
+h1 {
+  font-family: 'Inter', sans-serif;
+  font-weight: bold;
+  font-size: 42px;
+  line-height: 50px;
+  color: $title_color;
+}
+
+h3 {
+  font-family: 'Inter', sans-serif;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 22px;
+  color: $title_color;
+}
+
+
 //container
 
 .container {
@@ -39,7 +57,7 @@ body {
 //header
 
 .header__inner {
-  padding-top: 70px;
+  padding-top: 30px;
   display: flex;
   justify-content: space-between;
   .header__nav {
@@ -113,6 +131,7 @@ body {
   }
   .intro__btn {
     display: flex;
+    padding-bottom: 60px;
     .intro__btn__light{
       @include light_btn(157px, 46px, $border-color);
       margin-right: 20px;
@@ -123,5 +142,215 @@ body {
   }
 }
 
-//font-family: 'Inter', sans-serif;
-//font-family: 'Rubik', sans-serif;
+.intro__bg {
+  position: absolute;
+  display: block;
+  width: 50%;
+  height: 100vh;
+  background: url("../images/header__img.png") top left no-repeat;
+  background-size: cover;
+  transform: translateX(100%);
+  top: 100px;
+}
+
+.intro__movie {
+  display: flex;
+  justify-content: start;
+  img:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+    @extend %transition;
+  }
+}
+
+.intro__description {
+  display: flex;
+  height: 80px;
+  flex-direction: column;
+  justify-content: space-around;
+  padding-left: 20px;
+  .intro__preview {
+    text-decoration: none;
+    font-family: 'Rubik', sans-serif;
+    font-size: 14px;
+    line-height: 22px;
+    color: $copyright;
+    &:hover {
+      color: #333333;
+    }
+  }
+}
+
+.intro__logo {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  padding-top: 100px;
+  opacity: .3;
+  img {
+    display: block;
+    padding: 0 10px;
+  }
+}
+
+
+//choice
+
+.section--choice {
+  background: url("../images/choise_bg.png") top center no-repeat;
+
+}
+
+
+.section__title {
+  text-align: center;
+  h1 {
+    padding-top: 95px;
+    padding-bottom: 13px;
+  }
+  p {
+    padding-bottom: 15px;
+  }
+}
+
+
+.choice {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.choice__item {
+  position: relative;
+  width: 30%;
+  margin: 35px 0;
+  .choice__icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  h3 {
+    padding-left: 52px;
+    padding-bottom: 10px;
+    &:hover {
+      cursor: pointer;
+      color: $act-color;
+      @extend %transition
+    }
+  }
+  p {
+    padding-left: 52px;
+    padding-bottom: 15px;
+    line-height: 20px;
+  }
+}
+
+
+//Traffic
+
+.traffic {
+  margin-top: 120px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.traffic__item {
+  width: 50%;
+  padding: 0 40px;
+  h1 {
+    padding-top: 40px;
+    padding-bottom: 32px;
+    span {
+      color: $act-color;
+    }
+  }
+  .btn__light {
+    margin-top: 42px;
+    @include light_btn(155px, 48px, $border-color);
+  }
+}
+
+
+//computer
+
+
+.computer__inner {
+  margin-top: 150px;
+  position: relative;
+  text-align: center;
+  h1 {
+    padding-bottom: 32px;
+  }
+  span {
+    color: $act-color;
+  }
+}
+
+.computer__content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.computer__item {
+  margin-top: 48px;
+  width: 30%;
+  text-align: center;
+  h1 {
+    padding-bottom: 16px;
+  }
+}
+
+.computer__bg {
+  display: block;
+  position: absolute;
+  background: url("../images/Computer_bg.png") center;
+  background-size: cover;
+  width: 386px;
+  height: 580px;
+  transform: rotate(-10deg);
+  left: -220px;
+  top: -300px;
+  z-index: -1;
+}
+
+//project
+
+.project {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 160px;
+  background: url("../images/project_bg.png") bottom no-repeat;
+  h1 {
+    padding-bottom: 46px;
+  }
+
+  span {
+    color: $act-color;
+  }
+  .btn__light {
+    margin-bottom: 353px;
+    @include light_btn(164px, 54px, $border-color);
+
+  }
+}
+
+
+
+//business
+
+.business__img {
+  position: relative;
+}
+
+.business__bg {
+  display: block;
+  width: 818px;
+  height: 461px;
+  background: url("../images/business_bg.png") no-repeat;
+  z-index: -1;
+  position: absolute;
+  left: -220px;
+  top: 0;
+
+}
