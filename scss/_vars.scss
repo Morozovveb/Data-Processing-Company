@@ -1,0 +1,16 @@
+$main_color: #8476AA;
+$act-color: #F2994A;
+$title_color: #99EFD0;
+$navlink_color: #B5B5B5;
+$navlink_hover: #F2994A;
+$border-color: $act-color;
+
+%bacground_color {
+  background: #0F1145;
+}
+
+%transition {
+  transition: all .2s linear;
+}
+
+

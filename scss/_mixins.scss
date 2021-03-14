@@ -1,0 +1,44 @@
+@mixin shadow_btn($bw,$bh,$brd-color){
+  width: $bw;
+  height: $bh;
+  border: 1px solid $brd-color;
+  border-radius: 3px;
+  color: $brd-color;
+  background-color: transparent;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 1px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all .2s linear;
+  &:hover {
+    background-color: #040D3E;
+    box-shadow: -11.09px 18.13px 36.6483px rgba(242, 153, 74, 0.13);
+    color: #ffffff;
+  }
+}
+
+@mixin light_btn($bw,$bh,$brd-color){
+  width: $bw;
+  height: $bh;
+  border: 1px solid $brd-color;
+  border-radius: 3px;
+  color: #ffffff;
+  background-color: $brd-color;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 1px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all .2s linear;
+  &:hover {
+    background-color: #040D3E;
+    box-shadow: -11.09px 18.13px 36.6483px rgba(242, 153, 74, 0.13);
+    color: #ffffff;
+  }
+}
+

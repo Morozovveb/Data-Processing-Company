@@ -1,9 +1,127 @@
+@import "vars";
+@import "mixins";
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Rubik', sans-serif;
 }
 
 body {
-  color: red;
+  color: $main_color;
+  @extend %bacground_color;
+  &:after {
+    content: " ";
+    background: linear-gradient(222.26deg, #3B1D60 1.22%, #040D3E 106.28%);
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 200vh;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: -1;
+
+  }
 }
+
+//container
+
+.container {
+  padding: 0 10px;
+  margin: 0 auto;
+  max-width: 1120px;
+  height: 100%;
+}
+
+
+//header
+
+.header__inner {
+  padding-top: 70px;
+  display: flex;
+  justify-content: space-between;
+  .header__nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .header__logo {
+      margin-right: 44px;
+    }
+  }
+}
+
+
+//nav
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  width: 347px;
+    .nav__link {
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: $navlink_color;
+    &:hover {
+    color: $navlink_hover;
+      @extend %transition;
+    }
+  }
+}
+
+
+//btn
+
+.btn {
+  display: flex;
+  .btn__dark {
+    @include shadow_btn(112px, 36px, $border-color);
+    margin-right: 20px;
+  }
+  .btn__light {
+    @include light_btn(112px, 36px, $border-color);
+  }
+}
+
+
+//intro
+
+.intro {
+  position: relative;
+  .into__inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.intro__item {
+  .intro__title {
+    font-family: 'Inter', sans-serif;
+    font-weight: bold;
+    font-size: 44px;
+    line-height: 50px;
+    color: $title_color;
+    padding-top: 135px;
+    padding-bottom: 20px;
+  }
+  .intro__text {
+    padding-bottom: 40px;
+  }
+  .intro__btn {
+    display: flex;
+    .intro__btn__light{
+      @include light_btn(157px, 46px, $border-color);
+      margin-right: 20px;
+    }
+    .intro__btn__dark{
+      @include shadow_btn(157px, 46px, $border-color);
+    }
+  }
+}
+
+//font-family: 'Inter', sans-serif;
+//font-family: 'Rubik', sans-serif;
